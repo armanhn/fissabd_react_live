@@ -36,10 +36,6 @@ export default function Home() {
   const navigateRocket = () => {
     navigate('/rocket');
   };
-  const headerRef = useRef(null);
-  const navbarRef = useRef(null);
-  const [topSpacing, setTopSpacing] = useState(0);
-
   useEffect(() => {
     AOS.init();
   }, [])
