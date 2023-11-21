@@ -6,6 +6,46 @@ div>p{
     padding-top : 1.25rem;
 }
 
+.icon-color-custom {
+  color: #00e291;
+}
+
+
+.group-hover:block {
+  display: none;
+}
+
+.group:hover .group-hover:block {
+  display: block;
+}
+
+/* Dropdown Styles */
+ul.absolute {
+  background-color: white; /* Background color */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Dropdown Shadow */
+  z-index: 1; /* Make sure it's above other elements */
+}
+
+ul.absolute li {
+  padding: 8px 16px; /* Padding for dropdown items */
+  border-bottom: 1px solid #f1f1f1; /* Optional: bottom border for each item */
+}
+
+ul.absolute li:last-child {
+  border-bottom: none; /* Remove bottom border for the last item */
+}
+
+ul.absolute li a {
+  color: black; /* Text color for dropdown items */
+  text-decoration: none; /* Remove underline from links */
+  display: block; /* Make the entire area clickable */
+}
+
+ul.absolute li a:hover {
+  background-color: #ddd; /* Hover background color */
+}
+
+
 /* .swiper-container {
     width: auto;
   }

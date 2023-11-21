@@ -11,11 +11,9 @@ import { FaBuilding, FaEarthAmericas } from 'react-icons/fa6'
 import { IoHome, IoWifi } from "react-icons/io5";
 import { FcCheckmark } from 'react-icons/fc'
 import { BsBoxFill } from 'react-icons/bs'
-
-import { CiMobile4 } from 'react-icons/ci'
-
-import Navbar from './Navbar'
+import Navbar from './Navbar';
 import Footer from './Footer'
+import Header from './Header';
 
 export default function Home() {
 
@@ -36,15 +34,22 @@ export default function Home() {
   const navigateRocket = () => {
     navigate('/rocket');
   };
+  const navigateNagad = () => {
+    navigate('/nagad');
+  };
+  const navigateUpay = () => {
+    navigate('/upay');
+  };
+
   useEffect(() => {
     AOS.init();
   }, [])
-  //
+
   return (
-    <div>
+    <>
+      <Header />
       <Navbar />
       <div className="w-full">
-
         <Swiper
           spaceBetween={30}
           effect={'fade'}
@@ -75,8 +80,8 @@ export default function Home() {
       <div className='bg-gradient-to-r from-gOne to-gTwo w-full '>
         <div className='bg-cover bg-no-repeat h-auto' style={{ backgroundImage: "url('/images/cloud.png')", backgroundPosition: 'center 20px' }}>
           <div className='flex justify-center items-center xl:text-left text-center max-w-6xl mx-auto xl:px-0 px-8'>
-            <div className='w-3/4'>
-              <p className='mt-8'>Starting at ৳800/month</p>
+            <div className='w-3/4 pb-40 -mt-12'>
+              <span className=''>Starting at ৳800/month</span>
               <h1 className='sm:text-4xl text-2xl font-bold mt-8'>Lightning-Fast Connectivity & The Future of Reliable 24/7 Internet Performance</h1>
               <p className=''>Recognized as Dhaka city's most dependable local internet service provider, FISSA has been bridging digital divides since July 2001. Our mission? Delivering high-speed broadband at affordable rates, right to the doorsteps of our cherished local community.</p>
               <div className='mt-8'>
@@ -262,8 +267,8 @@ export default function Home() {
           <h1 className='text-4xl font-bold leading-tight'>Benefits of Using Our Home and Corporate Internet Services</h1>
           <p className='pt-8'>Choose FISSA for unparalleled internet solutions tailored for both homes and businesses. Here's why you should trust us:</p>
           <p className='flex pt-8'> <FcCheckmark className='text-2xl pr-1' />100% Connection Uptime: We prioritize your connectivity. Experience zero downtime and consistent high-speed access.</p>
-          <p className='flex pt-8'> <FcCheckmark className='text-2xl pr-1' />Robust Security: Safeguard your data with our advanced security protocols, ensuring a safe browsing environment.</p>
-          <p className='flex pt-8'> <FcCheckmark className='text-2xl pr-1' />24/7 Customer Support: Our dedicated team is always available, ensuring any issues are addressed promptly.</p>
+          {/* <p className='flex pt-8'> <FcCheckmark className='text-2xl pr-1' />Robust Security: Safeguard your data with our advanced security protocols, ensuring a safe browsing environment.</p>
+          <p className='flex pt-8'> <FcCheckmark className='text-2xl pr-1' />24/7 Customer Support: Our dedicated team is always available, ensuring any issues are addressed promptly.</p> */}
           <p className='flex pt-8'> <FcCheckmark className='text-2xl pr-1' />Flexible Plans: From SOHO to large enterprises, we offer packages that cater to every need and budget.</p>
           <p className='flex pt-8'> <FcCheckmark className='text-2xl pr-1' />Seamless Integration: Easily integrate our services into your existing infrastructure, with minimal disruption.</p>
           <p className='flex pt-8'> <FcCheckmark className='text-2xl pr-1' />Future-Ready Technology: Stay ahead with our state-of-the-art technology, ensuring you're always connected to the future.</p>
@@ -286,34 +291,26 @@ export default function Home() {
               className="mySwiper"
             >
               <SwiperSlide>
-                <div className='w-80 h-80 p-7 bg-white border-2 rounded-xl border-grey hover:border-green mx-auto hover:cursor-pointer' onClick={navigateBkash}>
-                  <img src="/images/bkash.png" alt="FISSA BD" />
-                  <h3 className='text-xl font-bold'>Bkash</h3>
-                  <p className=''>Merchant: 101-202-303</p>
+                <div className='w-70 h-70 p-7 bg-white border-2 rounded-xl border-grey hover:border-green mx-auto hover:cursor-pointer' onClick={navigateBkash}>
+                  <img src="/images/bkash2.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
-                <div className='w-80 h-80 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateRocket}>
+                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateRocket}>
                   <img src="/images/rocketpay.png" alt="FISSA BD" />
-                  <h3 className='text-xl font-bold'>Rocket</h3>
-                  <p className=''>Merchant: 101-202-303</p>
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
-                <div className='w-80 h-80 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateBkash}>
-                  <img src="/images/rocketpay.png" alt="FISSA BD" />
-                  <h3 className='text-xl font-bold'>Nagad</h3>
-                  <p className=''>Merchant: 101-202-303</p>
+                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateBkash}>
+                  <img src="/images/nagad.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
-                <div className='w-80 h-80 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateBkash}>
-                  <img src="/images/rocketpay.png" alt="FISSA BD" />
-                  <h3 className='text-xl font-bold'>Upay</h3>
-                  <p className=''>Merchant: 101-202-303</p>
+                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateUpay}>
+                  <img className="mx-auto" src="/images/upay.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
             </Swiper>
@@ -323,43 +320,42 @@ export default function Home() {
 
       {/* PAYMENT WEB */}
 
-      <div className='bg-text-color sm:block hidden'>
-        <div className='py-12 grid grid-cols-5 grid-rows-2 max-w-5xl mx-auto' id='payment'>
+      <div className='bg-text-color sm:block hidden pb-20'>
+        <div className='py-12 grid grid-cols-5 grid-rows-2 max-w-5xl mx-auto xl:px-0 px-8' id='payment'>
+          <div data-aos="zoom-in-right" data-aos-duration="1500" className='flex justify-center items-center'>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateBkash}>
+              <img src="/images/bkash2.png" alt="FISSA BD" />
+            </div>
+          </div>
+          <div className=''>
+            <div className=''>
+            </div>
+          </div>
+          <div data-aos="zoom-in" className='flex justify-center items-center'>
+            <div className=''>
+              <FaEarthAmericas className="text-9xl mx-auto text-white" />
+            </div>
+          </div>
+          <div></div>
+          <div data-aos="zoom-in-left" data-aos-duration="1500" className='flex justify-center items-center'>
+            <div className='rounded-full w-36 h-36 overflow-hidden hover:border-green hover:border-4 hover:cursor-pointer bg-white flex items-center' onClick={navigateRocket}>
+              <img src="/images/rocketpay.png" alt="FISSA BD" />
+            </div>
+          </div>
+          <div></div>
+          <div data-aos="fade-up" data-aos-duration="1500" className='flex justify-center items-center'>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateNagad}>
+              <img src="/images/nagad.png" alt="FISSA BD" />
+            </div>
+          </div>
           <div className=''>
             <div className=''>
 
             </div>
           </div>
-          <div className='flex justify-center items-center'>
-            <div className='rounded-full w-28 h-28 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateBkash}>
-              <img src="/images/bkash.png" alt="FISSA BD" />
-            </div>
-          </div>
-          <div className='flex justify-center items-center'>
-            <div className=''>
-              <img src="" />
-            </div>
-          </div>
-          <div className='flex justify-center items-center'>
-            <div className='rounded-full w-28 h-28 overflow-hidden hover:border-green hover:border-4 hover:cursor-pointer bg-white flex items-center' onClick={navigateRocket}>
-              <img src="/images/rocketpay.png" alt="FISSA BD" />
-            </div>
-          </div>
-          <div></div>
-          <div></div>
-          <div className='flex justify-self-end items-center'>
-            <div className='rounded-full w-28 h-28 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateBkash}>
-              <img src="/images/rocketpay.png" alt="FISSA BD" />
-            </div>
-          </div>
-          <div className=''>
-            <div className=''>
-              <CiMobile4 className="text-9xl mx-auto text-white " />
-            </div>
-          </div>
-          <div className=''>
-            <div className='rounded-full w-28 h-28 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateBkash}>
-              <img src="/images/rocketpay.png" alt="FISSA BD" />
+          <div data-aos="fade-up" data-aos-duration="1500" className='flex justify-center items-center'>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateUpay}>
+              <img src="/images/upay.png" alt="FISSA BD" />
             </div>
           </div>
           <div className=''>
@@ -370,7 +366,11 @@ export default function Home() {
 
         </div>
       </div>
+
+
+
       <Footer />
-    </div>
+
+    </>
   )
 }
