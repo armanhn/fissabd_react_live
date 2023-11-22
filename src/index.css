@@ -44,6 +44,9 @@ ul.absolute li a {
 ul.absolute li a:hover {
   background-color: #ddd; /* Hover background color */
 }
+:root {
+  --swiper-theme-color: #000248 !important;
+}
 
 
 /* .swiper-container {

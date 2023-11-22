@@ -41,6 +41,24 @@ export default function Home() {
     navigate('/upay');
   };
 
+
+  const PricingPlan = ({ title, price, speed, fbSpeed, ytSpeed, bdixSpeed, extras, support }) => {
+    return (
+      <div data-aos="zoom-in-right" data-aos-duration="1500" className='w-100 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
+        <BsBoxFill className='text-5xl mx-auto' />
+        <h3 className='text-xl font-bold pt-7'>{title}</h3>
+        <p className='text-3xl text-green'>{price}</p>
+        <p>{speed} Internet Speed</p>
+        <p>{fbSpeed} Facebook Speed</p>
+        <p>{ytSpeed} YouTube Speed</p>
+        <p>{bdixSpeed} BDIX Speed</p>
+        <p>{extras}</p>
+        <p>{support}</p>
+        <button className='mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
+      </div>
+    );
+  };
+
   useEffect(() => {
     AOS.init();
   }, [])
@@ -51,6 +69,7 @@ export default function Home() {
       <Navbar />
       <div className="w-full">
         <Swiper
+          // slidesPerView={'auto'}
           spaceBetween={30}
           effect={'fade'}
           navigation={true}
@@ -135,7 +154,7 @@ export default function Home() {
 
         <div className='flex flex-wrap justify-center pt-12 gap-10'>
           <Swiper
-            slidesPerView={1}
+            // slidesPerView={1}
             centeredSlides={true}
             spaceBetween={30}
             loop={true}
@@ -153,107 +172,87 @@ export default function Home() {
                 slidesPerView: 2,
               },
               1024: {
-                slidesPerView: 4,
+                slidesPerView: 3,
               },
             }}
           >
             <SwiperSlide>
-              <div data-aos="zoom-in-right" data-aos-duration="1500" className='w-64 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
-                <BsBoxFill className='text-5xl mx-auto' />
-                <h3 className='text-xl font-bold pt-7'>SILVER</h3>
-                <p className=' text-3xl text-green'>৳3,000</p>
-                <p >12 Mbps Internet Speed</p>
-                <p > 35 Mbps Facebook Speed</p>
-                <p > 35 Mbps YouTube Speed</p>
-                <p >BDIX Speed Unlimited</p>
-                <p >Movies, IPTV & Torrent Unlimited</p>
-                <p >24/7 Support</p>
-                <button className=' mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
-              </div>
+              <PricingPlan
+                title="SILVER"
+                price="৳3,000"
+                speed="12 Mbps"
+                fbSpeed="35 Mbps"
+                ytSpeed="35 Mbps"
+                bdixSpeed="BDIX Speed Unlimited"
+                extras="Movies, IPTV & Torrent Unlimited"
+                support="24/7 Support"
+                aosType="zoom-in-right"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <div data-aos="zoom-in-up" data-aos-duration="1500" className='w-64 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
-                <BsBoxFill className='text-5xl mx-auto' />
-                <h3 className='text-xl font-bold pt-7'>GOLD</h3>
-                <p className=' text-3xl text-green'>৳5,000</p>
-                <p > 20 Mbps Internet Speed</p>
-                <p > 35 Mbps Facebook Speed</p>
-                <p > 35 Mbps YouTube Speed</p>
-                <p >BDIX Speed Unlimited</p>
-                <p >Movies, IPTV & Torrent Unlimited</p>
-                <p >24/7 Support</p>
-                <button className=' mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
-              </div>
+              <PricingPlan
+                title="SILVER"
+                price="৳3,000"
+                speed="12 Mbps"
+                fbSpeed="35 Mbps"
+                ytSpeed="35 Mbps"
+                bdixSpeed="BDIX Speed Unlimited"
+                extras="Movies, IPTV & Torrent Unlimited"
+                support="24/7 Support"
+                aosType="zoom-in-up"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <div data-aos="zoom-in-up" data-aos-duration="1500" className='w-64 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
-                <BsBoxFill className='text-5xl mx-auto' />
-                <h3 className='text-xl font-bold pt-7'>GOLD</h3>
-                <p className=' text-3xl text-green'>৳5,000</p>
-                <p > 20 Mbps Internet Speed</p>
-                <p > 35 Mbps Facebook Speed</p>
-                <p > 35 Mbps YouTube Speed</p>
-                <p >BDIX Speed Unlimited</p>
-                <p >Movies, IPTV & Torrent Unlimited</p>
-                <p >24/7 Support</p>
-                <button className=' mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
-              </div>
+              <PricingPlan
+                title="SILVER"
+                price="৳3,000"
+                speed="12 Mbps"
+                fbSpeed="35 Mbps"
+                ytSpeed="35 Mbps"
+                bdixSpeed="BDIX Speed Unlimited"
+                extras="Movies, IPTV & Torrent Unlimited"
+                support="24/7 Support"
+                aosType="zoom-in-left"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <div data-aos="zoom-in-up" data-aos-duration="1500" className='w-64 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
-                <BsBoxFill className='text-5xl mx-auto' />
-                <h3 className='text-xl font-bold pt-7'>GOLD</h3>
-                <p className=' text-3xl text-green'>৳5,000</p>
-                <p > 20 Mbps Internet Speed</p>
-                <p > 35 Mbps Facebook Speed</p>
-                <p > 35 Mbps YouTube Speed</p>
-                <p >BDIX Speed Unlimited</p>
-                <p >Movies, IPTV & Torrent Unlimited</p>
-                <p >24/7 Support</p>
-                <button className=' mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
-              </div>
+              <PricingPlan
+                title="SILVER"
+                price="৳3,000"
+                speed="12 Mbps"
+                fbSpeed="35 Mbps"
+                ytSpeed="35 Mbps"
+                bdixSpeed="BDIX Speed Unlimited"
+                extras="Movies, IPTV & Torrent Unlimited"
+                support="24/7 Support"
+                aosType="zoom-in-right"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <div data-aos="zoom-in-up" data-aos-duration="1500" className='w-64 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
-                <BsBoxFill className='text-5xl mx-auto' />
-                <h3 className='text-xl font-bold pt-7'>GOLD</h3>
-                <p className=' text-3xl text-green'>৳5,000</p>
-                <p > 20 Mbps Internet Speed</p>
-                <p > 35 Mbps Facebook Speed</p>
-                <p > 35 Mbps YouTube Speed</p>
-                <p >BDIX Speed Unlimited</p>
-                <p >Movies, IPTV & Torrent Unlimited</p>
-                <p >24/7 Support</p>
-                <button className=' mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
-              </div>
+              <PricingPlan
+                title="SILVER"
+                price="৳3,000"
+                speed="12 Mbps"
+                fbSpeed="35 Mbps"
+                ytSpeed="35 Mbps"
+                bdixSpeed="BDIX Speed Unlimited"
+                extras="Movies, IPTV & Torrent Unlimited"
+                support="24/7 Support"
+                aosType="zoom-in-right"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <div data-aos="zoom-in-up" data-aos-duration="1500" className='w-64 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
-                <BsBoxFill className='text-5xl mx-auto' />
-                <h3 className='text-xl font-bold pt-7'>GOLD</h3>
-                <p className=' text-3xl text-green'>৳5,000</p>
-                <p > 20 Mbps Internet Speed</p>
-                <p > 35 Mbps Facebook Speed</p>
-                <p > 35 Mbps YouTube Speed</p>
-                <p >BDIX Speed Unlimited</p>
-                <p >Movies, IPTV & Torrent Unlimited</p>
-                <p >24/7 Support</p>
-                <button className=' mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div data-aos="zoom-in-up" data-aos-duration="1500" className='w-64 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
-                <BsBoxFill className='text-5xl mx-auto' />
-                <h3 className='text-xl font-bold pt-7'>GOLD</h3>
-                <p className=' text-3xl text-green'>৳5,000</p>
-                <p > 20 Mbps Internet Speed</p>
-                <p > 35 Mbps Facebook Speed</p>
-                <p > 35 Mbps YouTube Speed</p>
-                <p >BDIX Speed Unlimited</p>
-                <p >Movies, IPTV & Torrent Unlimited</p>
-                <p >24/7 Support</p>
-                <button className=' mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
-              </div>
+              <PricingPlan
+                title="SILVER"
+                price="৳3,000"
+                speed="12 Mbps"
+                fbSpeed="35 Mbps"
+                ytSpeed="35 Mbps"
+                bdixSpeed="BDIX Speed Unlimited"
+                extras="Movies, IPTV & Torrent Unlimited"
+                support="24/7 Support"
+                aosType="zoom-in-right"
+              />
             </SwiperSlide>
           </Swiper>
         </div>
