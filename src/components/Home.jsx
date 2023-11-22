@@ -148,7 +148,7 @@ export default function Home() {
       <div className='max-w-6xl mx-auto text-center py-20 md:px-0 px-8' id="section-4">
         <div data-aos="fade-up" className='flex items-center flex-col gap-3 pt-4'>
           <h1 className='text-4xl font-bold leading-tight'> Our Packages</h1>
-          <div className="w-40 h-1.5 rounded-lg"></div>
+          <div className="w-36 h-1.5 rounded-lg bg-green"></div>
         </div>
         <p data-aos="zoom-in" className='pt-12'>Dive into a world of tailored internet solutions with FISSA. Our diverse range of packages is designed to cater to every need, from the casual browser to the data-intensive user. Whether you're a home user or a large enterprise, we've got a plan that's just right for you. Experience seamless connectivity, top-notch customer support, and the promise of a better digital tomorrow with our curated internet packages</p>
 
