@@ -23,17 +23,18 @@ function Navbar() {
       <div className='flex items-center justify-between mx-auto max-w-6xl px-4 md:px-8'>
         {/* Logo */}
         <div>
-          <img className="h-16" src="/images/fissa_logo.png" alt="FISSA BD" />
+          <Link className='hover:text-green' to="/"><img className="h-16" src="/images/fissa_logo.png" alt="FISSA BD" /></Link>
+
         </div>
 
         {/* Desktop Nav Links */}
         <div className='hidden md:flex md:flex-row md:items-center md:gap-8 text-text-color'>
-          <Link className='hover:text-green' to="/#">Home</Link>
 
+          <a className='hover:text-green' href="/">Home</a>
           {/* Desktop Dropdown */}
           <div className='relative group'>
             {/* Trigger element */}
-            <Link className='hover:text-green' to="/#section-1">Services</Link>
+            <Link className='hover:text-green' to="/">Services</Link>
             {/* Dropdown Menu */}
             <ul className='absolute hidden group-hover:block bg-white shadow-md rounded-md overflow-hidden list-none w-56 z-10'>
               {/* Dropdown items */}
@@ -43,10 +44,10 @@ function Navbar() {
             </ul>
           </div>
 
-          <Link className='hover:text-green' to="/#section-4">Packages</Link>
-          <Link className='hover:text-green' to="/bill-payments">Bill Payments</Link>
+          <a href="/#section-4" className='hover:text-green'>Packages</a>
+          <a className='hover:text-green' href="/#bill-payments">Bill Payments</a>
           <Link className='hover:text-green' to="/aboutus">About Us</Link>
-          <Link className='hover:text-green' to="/#footer">Contact Us</Link>
+          <a className='hover:text-green' href="/#footer">Contact Us</a>
         </div>
 
         {/* Mobile Menu Button */}

@@ -367,7 +367,7 @@ export default function Home() {
       </div>
 
 
-
+      <div id='footer'></div>
       <Footer />
 
     </>
