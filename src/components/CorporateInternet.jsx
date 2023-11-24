@@ -27,10 +27,24 @@
 //   )
 // }
 
-import React from 'react';
+// import React from 'react';
 import { FaRocket, FaNetworkWired, FaLock } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import PricingPlan from './PricingPlan';
+import React, { useRef, useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import AOS from 'aos';
+import { useNavigate } from 'react-router-dom';
+import { FaMobileAlt } from "react-icons/fa";
+
+
+
 
 const Feature = ({ Icon, title, description }) => {
   return (
@@ -49,7 +63,39 @@ const Feature = ({ Icon, title, description }) => {
 
 
 
+
+
 export default function CorporateInternet() {
+  const navigate = useNavigate();
+
+  const navigateHomeInternet = () => {
+    navigate('/home-internet');
+  };
+  const navigateCorporateInternet = () => {
+    navigate('/corporate-internet');
+  };
+  const navigateBandwidthReseller = () => {
+    navigate('/bandwidth-reseller');
+  };
+  const navigateBkash = () => {
+    navigate('/bkash');
+  };
+  const navigateRocket = () => {
+    navigate('/rocket');
+  };
+  const navigateNagad = () => {
+    navigate('/nagad');
+  };
+  const navigateUpay = () => {
+    navigate('/upay');
+  };
+
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
+
   return (
     <div>
       <Navbar />
@@ -80,6 +126,134 @@ export default function CorporateInternet() {
               description="Safeguard your corporate data with our state-of-the-art security measures, including firewalls, encryption, and 24/7 monitoring."
             />
           </div>
+        </div>
+        <div className='flex mx-auto text-center p-24 gap-16 '>
+          <PricingPlan
+            title="SILVER"
+            price="৳3,000"
+            speed="12 Mbps"
+            fbSpeed="35 Mbps"
+            ytSpeed="35 Mbps"
+            bdixSpeed="BDIX Speed Unlimited"
+            extras="Movies, IPTV & Torrent Unlimited"
+            support="24/7 Support"
+            aosType="none"
+          />
+          <PricingPlan
+            title="SILVER"
+            price="৳3,000"
+            speed="12 Mbps"
+            fbSpeed="35 Mbps"
+            ytSpeed="35 Mbps"
+            bdixSpeed="BDIX Speed Unlimited"
+            extras="Movies, IPTV & Torrent Unlimited"
+            support="24/7 Support"
+            aosType="none"
+          />
+          <PricingPlan
+            title="SILVER"
+            price="৳3,000"
+            speed="12 Mbps"
+            fbSpeed="35 Mbps"
+            ytSpeed="35 Mbps"
+            bdixSpeed="BDIX Speed Unlimited"
+            extras="Movies, IPTV & Torrent Unlimited"
+            support="24/7 Support"
+            aosType="none"
+          />
+
+        </div>
+      </div>
+
+      {/* <div className='bg-text-color' id='bill-payments'>
+        <div className='max-w-6xl mx-auto text-center pt-20 pb-12 xl:px-0 px-8'>
+          <div className='flex items-center flex-col gap-3' data-aos="zoom-in">
+            <h1 className='text-4xl font-bold leading-tight text-white'> Pay your bills through Mobile banking</h1>
+            <div className="w-40 h-1.5 rounded-lg bg-green"></div>
+          </div>
+
+          <div className='block sm:hidden py-12'>
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={10}
+              navigation={true}
+              modules={[EffectFade, Navigation, Pagination]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div className='w-70 h-70 p-7 bg-white border-2 rounded-xl border-grey hover:border-green mx-auto hover:cursor-pointer' onClick={navigateBkash}>
+                  <img src="/images/bkash2.png" alt="FISSA BD" />
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateRocket}>
+                  <img src="/images/rocketpay.png" alt="FISSA BD" />
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateBkash}>
+                  <img src="/images/nagad.png" alt="FISSA BD" />
+                </div>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateUpay}>
+                  <img className="mx-auto" src="/images/upay.png" alt="FISSA BD" />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </div> */}
+
+      {/* PAYMENT WEB */}
+
+      <div className='bg-text-color sm:block hidden pb-20'>
+        <div className='py-12 grid grid-cols-5 grid-rows-2 max-w-5xl mx-auto xl:px-0 px-8' id='payment'>
+          <div data-aos="zoom-in-right" data-aos-duration="1500" className='flex justify-center items-center'>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateBkash}>
+              <img src="/images/bkash2.png" alt="FISSA BD" />
+            </div>
+          </div>
+          <div className=''>
+            <div className=''>
+            </div>
+          </div>
+          <div data-aos="zoom-in" className='flex justify-center items-center'>
+            <div className=''>
+              <FaMobileAlt className="text-9xl mx-auto text-white" />
+            </div>
+          </div>
+          <div></div>
+          <div data-aos="zoom-in-left" data-aos-duration="1500" className='flex justify-center items-center'>
+            <div className='rounded-full w-36 h-36 overflow-hidden hover:border-green hover:border-4 hover:cursor-pointer bg-white flex items-center' onClick={navigateRocket}>
+              <img src="/images/rocketpay.png" alt="FISSA BD" />
+            </div>
+          </div>
+          <div></div>
+          <div data-aos="fade-up" data-aos-duration="1500" className='flex justify-center items-center'>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateNagad}>
+              <img src="/images/nagad.png" alt="FISSA BD" />
+            </div>
+          </div>
+          <div className=''>
+            <div className=''>
+
+            </div>
+          </div>
+          <div data-aos="fade-up" data-aos-duration="1500" className='flex justify-center items-center'>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateUpay}>
+              <img src="/images/upay.png" alt="FISSA BD" />
+            </div>
+          </div>
+          <div className=''>
+            <div className=''>
+
+            </div>
+          </div>
+
         </div>
       </div>
 

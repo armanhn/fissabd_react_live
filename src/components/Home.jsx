@@ -11,9 +11,11 @@ import { FaBuilding, FaEarthAmericas } from 'react-icons/fa6'
 import { IoHome, IoWifi } from "react-icons/io5";
 import { FcCheckmark } from 'react-icons/fc'
 import { BsBoxFill } from 'react-icons/bs'
+import { FaMobileAlt } from "react-icons/fa"
 import Navbar from './Navbar';
 import Footer from './Footer'
 import Header from './Header';
+import PricingPlan from './PricingPlan';
 
 export default function Home() {
 
@@ -42,22 +44,22 @@ export default function Home() {
   };
 
 
-  const PricingPlan = ({ title, price, speed, fbSpeed, ytSpeed, bdixSpeed, extras, support }) => {
-    return (
-      <div data-aos="zoom-in-right" data-aos-duration="1500" className='w-100 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
-        <BsBoxFill className='text-5xl mx-auto' />
-        <h3 className='text-xl font-bold pt-7'>{title}</h3>
-        <p className='text-3xl text-green'>{price}</p>
-        <p>{speed} Internet Speed</p>
-        <p>{fbSpeed} Facebook Speed</p>
-        <p>{ytSpeed} YouTube Speed</p>
-        <p>{bdixSpeed} BDIX Speed</p>
-        <p>{extras}</p>
-        <p>{support}</p>
-        <button className='mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
-      </div>
-    );
-  };
+  // const PricingPlan = ({ title, price, speed, fbSpeed, ytSpeed, bdixSpeed, extras, support }) => {
+  //   return (
+  //     <div data-aos="zoom-in-right" data-aos-duration="1500" className='w-100 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
+  //       <BsBoxFill className='text-5xl mx-auto' />
+  //       <h3 className='text-xl font-bold pt-7'>{title}</h3>
+  //       <p className='text-3xl text-green'>{price}</p>
+  //       <p className='text-sm'>{speed} Internet Speed</p>
+  //       <p className='text-sm'>{fbSpeed} Facebook Speed</p>
+  //       <p className='text-sm'>{ytSpeed} YouTube Speed</p>
+  //       <p className='text-sm'>{bdixSpeed} BDIX Speed</p>
+  //       <p className='text-sm'>{extras}</p>
+  //       <p className='text-sm'>{support}</p>
+  //       <button className='mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
+  //     </div>
+  //   );
+  // };
 
   useEffect(() => {
     AOS.init();
@@ -100,9 +102,9 @@ export default function Home() {
         <div className='bg-cover bg-no-repeat h-auto' style={{ backgroundImage: "url('/images/cloud.png')", backgroundPosition: 'center 20px' }}>
           <div className='flex justify-center items-center xl:text-left text-center max-w-6xl mx-auto xl:px-0 px-8'>
             <div className='w-3/4 pb-40 -mt-12'>
-              <span className=''>Starting at ৳800/month</span>
+              <span className='text-sm'>Starting at ৳800/month</span>
               <h1 className='sm:text-4xl text-2xl font-bold mt-8'>Lightning-Fast Connectivity & The Future of Reliable 24/7 Internet Performance</h1>
-              <p className=''>Recognized as Dhaka city's most dependable local internet service provider, FISSA has been bridging digital divides since July 2001. Our mission? Delivering high-speed broadband at affordable rates, right to the doorsteps of our cherished local community.</p>
+              <p className='text-sm'>Recognized as Dhaka city's most dependable local internet service provider, FISSA has been bridging digital divides since July 2001. Our mission? Delivering high-speed broadband at affordable rates, right to the doorsteps of our cherished local community.</p>
               <div className='mt-8'>
                 <button className='bg-green text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>SEE OUR PLANS</button>
               </div>
@@ -127,19 +129,19 @@ export default function Home() {
             <div data-aos="zoom-in" data-aos-duration="1500" className='w-80  h-80 p-7 bg-white border-2 rounded-xl border-grey hover:border-green shadow-lg hover:cursor-pointer' onClick={navigateCorporateInternet}>
               <FaBuilding className='text-6xl mx-auto' />
               <h3 className='text-xl font-bold pt-7 '>Corporate Internet</h3>
-              <p className='pt-5'>In addition to broadband internet services, we help our clients build, connect, operate and maintain their own SOHO or office network.</p>
+              <p className='pt-5 text-sm'>In addition to broadband internet services, we help our clients build, connect, operate and maintain their own SOHO or office network.</p>
             </div>
 
             <div data-aos="zoom-in" data-aos-duration="1500" className='w-80 h-80 p-7 bg-white border-2 border-grey hover:border-green rounded-xl shadow-lg hover:cursor-pointer' onClick={navigateHomeInternet}>
               <IoHome className='text-6xl mx-auto' />
               <h3 className='text-xl font-bold pt-7'>Home Internet</h3>
-              <p className='pt-4'>Experience seamless browsing and streaming with our tailored home packages. Fast, reliable, and supported by a dedicated customer care team.</p>
+              <p className='pt-4 text-sm'>Experience seamless browsing and streaming with our tailored home packages. Fast, reliable, and supported by a dedicated customer care team.</p>
             </div>
 
             <div data-aos="zoom-in" data-aos-duration="1500" className='w-80 h-80 p-7 bg-white border-2 border-grey hover:border-green rounded-xl shadow-lg hover:cursor-pointer' onClick={navigateBandwidthReseller}>
               <IoWifi className='text-6xl mx-auto' />
               <h3 className='text-xl font-bold pt-7'>Bandwidth Reseller</h3>
-              <p className='pt-4'>Expand your reach with our bandwidth reselling solutions. Reliable and high-speed options for ISPs, enhancing customer connectivity.</p>
+              <p className='pt-4 text-sm'>Expand your reach with our bandwidth reselling solutions. Reliable and high-speed options for ISPs, enhancing customer connectivity.</p>
             </div>
           </div>
         </div>
@@ -332,7 +334,7 @@ export default function Home() {
           </div>
           <div data-aos="zoom-in" className='flex justify-center items-center'>
             <div className=''>
-              <FaEarthAmericas className="text-9xl mx-auto text-white" />
+              <FaMobileAlt className="text-9xl mx-auto text-white" />
             </div>
           </div>
           <div></div>
