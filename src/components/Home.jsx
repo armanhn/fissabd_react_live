@@ -359,37 +359,6 @@ export default function Home() {
           </div>
 
           <div className='block sm:hidden py-12'>
-            {/* <Swiper
-              slidesPerView={1}
-              spaceBetween={10}
-              navigation={true}
-              modules={[EffectFade, Navigation, Pagination]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className='w-70 h-70 p-7 bg-white border-2 rounded-xl border-grey hover:border-red mx-auto hover:cursor-pointer' onClick={navigateBkash}>
-                  <img className="w-3/4 mx-auto" src="/images/bkash2.png" alt="FISSA BD" />
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={navigateRocket}>
-                  <img className="w-3/4 mx-auto" src="/images/rocketpay.png" alt="FISSA BD" />
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={navigateBkash}>
-                  <img className="w-3/4 mx-auto" src="/images/nagad.png" alt="FISSA BD" />
-                </div>
-              </SwiperSlide>
-
-              <SwiperSlide>
-                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={navigateUpay}>
-                  <img className="w-3/4 mx-auto" src="/images/upay.png" alt="FISSA BD" />
-                </div>
-              </SwiperSlide>
-            </Swiper> */}
             <Swiper
               slidesPerView={1}
               spaceBetween={10}
