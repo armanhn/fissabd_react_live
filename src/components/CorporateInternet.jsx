@@ -70,8 +70,9 @@ export default function CorporateInternet() {
     <div>
       <Navbar />
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
-        <div className='text-center py-6'>
-          <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold'>Corporate Internet</h1>
+        <div className='flex items-center flex-col gap-3 pt-4'>
+          <h1 className='text-4xl font-bold leading-tight'> Corporate Internet</h1>
+          <div className="w-36 h-1.5 rounded-lg bg-red"></div>
         </div>
 
         <div className='flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 p-4'>
@@ -138,7 +139,7 @@ export default function CorporateInternet() {
         <div className='max-w-6xl mx-auto text-center pt-20 pb-12 xl:px-0 px-8'>
           <div className='flex items-center flex-col gap-3' data-aos="zoom-in">
             <h1 className='text-4xl font-bold leading-tight text-white'> Pay your bills through Mobile banking</h1>
-            <div className="w-40 h-1.5 rounded-lg bg-green"></div>
+            <div className="w-40 h-1.5 rounded-lg bg-red"></div>
           </div>
 
           <div className='block sm:hidden py-12'>
@@ -171,7 +172,7 @@ export default function CorporateInternet() {
       <div className='bg-text-color sm:block hidden pb-20'>
         <div className='py-12 grid grid-cols-5 grid-rows-2 max-w-5xl mx-auto xl:px-0 px-8' id='payment'>
           <div data-aos="zoom-in-right" data-aos-duration="1500" className='flex justify-center items-center'>
-            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateBkash}>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-red hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateBkash}>
               <img src="/images/bkash2.png" alt="FISSA BD" />
             </div>
           </div>
@@ -186,13 +187,13 @@ export default function CorporateInternet() {
           </div>
           <div></div>
           <div data-aos="zoom-in-left" data-aos-duration="1500" className='flex justify-center items-center'>
-            <div className='rounded-full w-36 h-36 overflow-hidden hover:border-green hover:border-4 hover:cursor-pointer bg-white flex items-center' onClick={navigateRocket}>
+            <div className='rounded-full w-36 h-36 overflow-hidden hover:border-red hover:border-4 hover:cursor-pointer bg-white flex items-center' onClick={navigateRocket}>
               <img src="/images/rocketpay.png" alt="FISSA BD" />
             </div>
           </div>
           <div></div>
           <div data-aos="fade-up" data-aos-duration="1500" className='flex justify-center items-center'>
-            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateNagad}>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-red hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateNagad}>
               <img src="/images/nagad.png" alt="FISSA BD" />
             </div>
           </div>
@@ -202,7 +203,7 @@ export default function CorporateInternet() {
             </div>
           </div>
           <div data-aos="fade-up" data-aos-duration="1500" className='flex justify-center items-center'>
-            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateUpay}>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-red hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateUpay}>
               <img src="/images/upay.png" alt="FISSA BD" />
             </div>
           </div>
