@@ -1,33 +1,3 @@
-// import React from 'react'
-
-// import Footer from './Footer'
-// import Navbar from './Navbar'
-
-// export default function CorporateInternet() {
-//   return (
-//     <div>
-//       <Navbar />
-//       <div className='flex items-center flex-col gap-2 pt-4'>
-//         <h1 className='text-4xl font-bold leading-tight'> Corporate Internet</h1>
-//       </div>
-// <div className='max-w-6xl mx-auto flex gap-4 md:flex-row flex-col xl:px-0 px-8 items-center justify-center' id='about-us'>
-//   <div className='md:w-2/4 pt-6'>
-//     <img className='h-3/4' src="/images/card_two.png" alt="IMAGE" />
-//   </div>
-//   <div className='md:w-2/4 pt-12 pl-4'>
-//     <p className='pt-8'>Sylnet has been one of the leading internet service providers in Sylhet, Bangladesh. At Sylnet we are committed to providing the highest quality services to you. we provide faster internet connection for home and corporate users according to the need of customer’s aspiration.We have 17 years experienced and expert team to provide any solutions about broadband internet connectivity within a short time. we are currently serving more than 155 Corporate and more than 7,000 Home users.</p>
-//     <p className='pt-8'>John Doe</p>
-//     <p className=''>CEO</p>
-//   </div>
-// </div>
-
-
-//       <Footer />
-//     </div>
-//   )
-// }
-
-// import React from 'react';
 import { FaRocket, FaNetworkWired, FaLock } from 'react-icons/fa';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -48,18 +18,18 @@ import { FaMobileAlt } from "react-icons/fa";
 
 const Feature = ({ Icon, title, description }) => {
   return (
-    <div className="md:flex md:items-center gap-4">
-      <div className="flex justify-center items-center p-6 bg-white rounded-full shadow-lg w-12 h-12 md:w-24 md:h-24">
-        {/* Apply the custom CSS class here */}
-        <Icon className="w-full h-full icon-color-custom" />
+    <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+      <div className="p-3 md:p-6 bg-white rounded-full shadow-lg w-16 h-16 md:w-24 md:h-24 mx-auto md:mx-0">
+        <Icon className="w-full h-full text-gray-800" />
       </div>
-      <div className="flex flex-col justify-center">
+      <div>
         <h2 className="text-lg font-bold">{title}</h2>
         <p>{description}</p>
       </div>
     </div>
   );
 };
+
 
 
 
@@ -99,17 +69,16 @@ export default function CorporateInternet() {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto">
-        <div className='flex items-center flex-col gap-2 pt-4'>
-          <h1 className='text-4xl font-bold leading-tight'>Corporate Internet</h1>
+      <div className="container mx-auto px-4 md:px-6 lg:px-8">
+        <div className='text-center py-6'>
+          <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold'>Corporate Internet</h1>
         </div>
 
-        <div className='flex flex-col md:flex-row items-center gap-4 p-4'>
-          {/* Adjust the size of the image container and image itself */}
-          <div className='md:w-1/3 flex justify-center'>
+        <div className='flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 p-4'>
+          <div className='w-full md:w-1/2 lg:w-1/3 flex justify-center'>
             <img className='w-3/4 md:w-full h-auto' src="/images/card_two.png" alt="Corporate Internet Image" />
           </div>
-          <div className='md:w-2/3 flex flex-col gap-4 items-center'>
+          <div className='w-full md:w-1/2 lg:w-2/3 flex flex-col gap-4 items-center'>
             <Feature
               Icon={FaRocket}
               title="Ultra-Fast Internet"
@@ -127,7 +96,7 @@ export default function CorporateInternet() {
             />
           </div>
         </div>
-        <div className='flex mx-auto text-center p-24 gap-16 '>
+        <div className='flex flex-col justify-center mx-auto text-center p-6 gap-4 md:flex-row'>
           <PricingPlan
             title="SILVER"
             price="৳3,000"
@@ -165,7 +134,7 @@ export default function CorporateInternet() {
         </div>
       </div>
 
-      {/* <div className='bg-text-color' id='bill-payments'>
+      <div className='bg-text-color' id='bill-payments'>
         <div className='max-w-6xl mx-auto text-center pt-20 pb-12 xl:px-0 px-8'>
           <div className='flex items-center flex-col gap-3' data-aos="zoom-in">
             <h1 className='text-4xl font-bold leading-tight text-white'> Pay your bills through Mobile banking</h1>
@@ -206,7 +175,7 @@ export default function CorporateInternet() {
             </Swiper>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* PAYMENT WEB */}
 
