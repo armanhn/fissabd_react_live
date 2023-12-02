@@ -19,6 +19,7 @@ import PricingPlan from './PricingPlan';
 
 export default function Home() {
 
+
   const navigate = useNavigate();
 
   const navigateHomeInternet = () => {
@@ -44,26 +45,194 @@ export default function Home() {
   };
 
 
-  // const PricingPlan = ({ title, price, speed, fbSpeed, ytSpeed, bdixSpeed, extras, support }) => {
-  //   return (
-  //     <div data-aos="zoom-in-right" data-aos-duration="1500" className='w-100 py-7 px-5 bg-white border-2 border-grey rounded-xl shadow-lg'>
-  //       <BsBoxFill className='text-5xl mx-auto' />
-  //       <h3 className='text-xl font-bold pt-7'>{title}</h3>
-  //       <p className='text-3xl text-green'>{price}</p>
-  //       <p className='text-sm'>{speed} Internet Speed</p>
-  //       <p className='text-sm'>{fbSpeed} Facebook Speed</p>
-  //       <p className='text-sm'>{ytSpeed} YouTube Speed</p>
-  //       <p className='text-sm'>{bdixSpeed} BDIX Speed</p>
-  //       <p className='text-sm'>{extras}</p>
-  //       <p className='text-sm'>{support}</p>
-  //       <button className='mt-5 bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>Get Started</button>
-  //     </div>
-  //   );
-  // };
-
   useEffect(() => {
     AOS.init();
   }, [])
+
+  const [activeTab, setActiveTab] = useState('corporate');
+
+  const TabButtons = () => (
+    <div className="tabs-header py-4">
+      <ul className="flex flex-col md:flex-row gap-4">
+        <button
+          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'corporate' ? 'bg-green text-white' : 'text-black bg-white'}`}
+          onClick={() => setActiveTab('corporate')}
+        >
+          Corporate Internet
+        </button>
+        <button
+          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'home' ? 'bg-green text-white' : 'text-black bg-white'}`}
+          onClick={() => setActiveTab('home')}
+        >
+          Home Internet
+        </button>
+        <button
+          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'reseller' ? 'bg-green text-white' : 'text-black bg-white'}`}
+          onClick={() => setActiveTab('reseller')}
+        >
+          Bandwidth Reseller
+        </button>
+      </ul>
+    </div>
+  );
+
+
+  // Data for Corporate category
+  const corporateData = [
+    {
+      title: "Corporate Gold",
+      price: "৳15,000",
+      speed: "80 Mbps",
+      fbSpeed: "150 Mbps",
+      ytSpeed: "150 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Priority Support, Dedicated IP",
+      support: "24/7 Support",
+      aosType: "fade-down"
+    },
+    {
+      title: "Corporate Silver",
+      price: "৳10,000",
+      speed: "50 Mbps",
+      fbSpeed: "100 Mbps",
+      ytSpeed: "100 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Basic Support, 99% Uptime",
+      support: "Regular Support",
+      aosType: "fade-up"
+    },
+
+    {
+      title: "Corporate Bronze",
+      price: "৳8,000",
+      speed: "30 Mbps",
+      fbSpeed: "60 Mbps",
+      ytSpeed: "60 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Basic Support, 95% Uptime",
+      support: "Business Hours Support",
+      aosType: "fade-right"
+    },
+    {
+      title: "Corporate Iron",
+      price: "৳5,000",
+      speed: "30 Mbps",
+      fbSpeed: "60 Mbps",
+      ytSpeed: "60 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Basic Support, 95% Uptime",
+      support: "Business Hours Support",
+      aosType: "fade-right"
+    }
+  ];
+
+  // Data for Home category
+  const homeData = [
+    {
+      title: "Home Silver",
+      price: "৳3,000",
+      speed: "15 Mbps",
+      fbSpeed: "30 Mbps",
+      ytSpeed: "30 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Unlimited Downloads",
+      support: "Regular Support",
+      aosType: "fade-left"
+    },
+    {
+      title: "Home Gold",
+      price: "৳5,000",
+      speed: "25 Mbps",
+      fbSpeed: "50 Mbps",
+      ytSpeed: "50 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "IPTV, Unlimited Torrent",
+      support: "24/7 Support",
+      aosType: "fade-up-right"
+    },
+    {
+      title: "Home Bronze",
+      price: "৳2,500",
+      speed: "10 Mbps",
+      fbSpeed: "20 Mbps",
+      ytSpeed: "20 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Basic Usage, Limited Downloads",
+      support: "Business Hours Support",
+      aosType: "fade-up-left"
+    }
+  ];
+
+  // Data for Reseller category
+  const resellerData = [
+    {
+      title: "Reseller Silver",
+      price: "৳20,000",
+      speed: "100 Mbps",
+      fbSpeed: "200 Mbps",
+      ytSpeed: "200 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Bulk Bandwidth, Resale Options",
+      support: "Priority Support",
+      aosType: "fade-down-right"
+    },
+    {
+      title: "Reseller Gold",
+      price: "৳30,000",
+      speed: "150 Mbps",
+      fbSpeed: "300 Mbps",
+      ytSpeed: "300 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Custom Packages, White Labeling",
+      support: "24/7 Dedicated Support",
+      aosType: "fade-down-left"
+    },
+    {
+      title: "Reseller Bronze",
+      price: "৳15,000",
+      speed: "75 Mbps",
+      fbSpeed: "150 Mbps",
+      ytSpeed: "150 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Standard Reseller Options",
+      support: "Regular Support",
+      aosType: "fade-zoom-in"
+    }
+  ];
+
+  const CarouselComponent = ({ data }) => (
+    <Swiper
+      // slidesPerView={1}
+      // centeredSlides={true}
+      spaceBetween={30}
+      loop={true}
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[Pagination, Navigation]}
+      className="mySwiper"
+      breakpoints={{
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      }}
+    >
+      {data.map((item, index) => (
+        <SwiperSlide key={index}>
+          <PricingPlan {...item} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  );
+
+
 
   return (
     <>
@@ -147,120 +316,23 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='max-w-6xl mx-auto text-center py-20 md:px-0 px-8' id="section-4">
+      <div className='max-w-6xl mx-auto px-4 text-center py-20 md:px-8' id="section-4">
         <div data-aos="fade-up" className='flex items-center flex-col gap-3 pt-4'>
           <h1 className='text-4xl font-bold leading-tight'> Our Packages</h1>
           <div className="w-36 h-1.5 rounded-lg bg-green"></div>
         </div>
         <p data-aos="zoom-in" className='pt-12'>Dive into a world of tailored internet solutions with FISSA. Our diverse range of packages is designed to cater to every need, from the casual browser to the data-intensive user. Whether you're a home user or a large enterprise, we've got a plan that's just right for you. Experience seamless connectivity, top-notch customer support, and the promise of a better digital tomorrow with our curated internet packages</p>
 
-        <div className='flex flex-wrap justify-center pt-12 gap-10'>
-          <Swiper
-            // slidesPerView={1}
-            centeredSlides={true}
-            spaceBetween={30}
-            loop={true}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            modules={[Pagination, Navigation]}
-            className="mySwiper"
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-          >
-            <SwiperSlide>
-              <PricingPlan
-                title="SILVER"
-                price="৳3,000"
-                speed="12 Mbps"
-                fbSpeed="35 Mbps"
-                ytSpeed="35 Mbps"
-                bdixSpeed="BDIX Speed Unlimited"
-                extras="Movies, IPTV & Torrent Unlimited"
-                support="24/7 Support"
-                aosType="zoom-in-right"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <PricingPlan
-                title="SILVER"
-                price="৳3,000"
-                speed="12 Mbps"
-                fbSpeed="35 Mbps"
-                ytSpeed="35 Mbps"
-                bdixSpeed="BDIX Speed Unlimited"
-                extras="Movies, IPTV & Torrent Unlimited"
-                support="24/7 Support"
-                aosType="zoom-in-up"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <PricingPlan
-                title="SILVER"
-                price="৳3,000"
-                speed="12 Mbps"
-                fbSpeed="35 Mbps"
-                ytSpeed="35 Mbps"
-                bdixSpeed="BDIX Speed Unlimited"
-                extras="Movies, IPTV & Torrent Unlimited"
-                support="24/7 Support"
-                aosType="zoom-in-left"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <PricingPlan
-                title="SILVER"
-                price="৳3,000"
-                speed="12 Mbps"
-                fbSpeed="35 Mbps"
-                ytSpeed="35 Mbps"
-                bdixSpeed="BDIX Speed Unlimited"
-                extras="Movies, IPTV & Torrent Unlimited"
-                support="24/7 Support"
-                aosType="zoom-in-right"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <PricingPlan
-                title="SILVER"
-                price="৳3,000"
-                speed="12 Mbps"
-                fbSpeed="35 Mbps"
-                ytSpeed="35 Mbps"
-                bdixSpeed="BDIX Speed Unlimited"
-                extras="Movies, IPTV & Torrent Unlimited"
-                support="24/7 Support"
-                aosType="zoom-in-right"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <PricingPlan
-                title="SILVER"
-                price="৳3,000"
-                speed="12 Mbps"
-                fbSpeed="35 Mbps"
-                ytSpeed="35 Mbps"
-                bdixSpeed="BDIX Speed Unlimited"
-                extras="Movies, IPTV & Torrent Unlimited"
-                support="24/7 Support"
-                aosType="zoom-in-right"
-              />
-            </SwiperSlide>
-          </Swiper>
+        <div className='tab-component'>
+          <TabButtons />
+          {activeTab === 'corporate' && <CarouselComponent data={corporateData} />}
+          {activeTab === 'home' && <CarouselComponent data={homeData} />}
+          {activeTab === 'reseller' && <CarouselComponent data={resellerData} />}
         </div>
+
       </div>
 
-      <div className='max-w-6xl mx-auto flex md:flex-row flex-col py-20 md:px-0 px-8'>
+      <div className='max-w-6xl mx-auto px-4 flex md:flex-row flex-col py-20 md:px-8'>
         <div className='md:w-2/4 pt-6'>
           <img src="/images/card_onev2.png" alt="IMAGE" />
         </div>
