@@ -18,60 +18,62 @@ import Header from './Header';
 import PricingPlan from './PricingPlan';
 import { useScrollToTop } from './hooks/scroll';
 export default function Home() {
-
   useScrollToTop();
   const navigate = useNavigate();
 
-  const navigateHomeInternet = () => {
-    navigate('/home-internet');
-  };
-  const navigateCorporateInternet = () => {
-    navigate('/corporate-internet');
-  };
-  const navigateBandwidthReseller = () => {
-    navigate('/bandwidth-reseller');
-  };
-  const navigateBkash = () => {
-    navigate('/bkash');
-  };
-  const navigateRocket = () => {
-    navigate('/rocket');
-  };
-  const navigateNagad = () => {
-    navigate('/nagad');
-  };
-  const navigateUpay = () => {
-    navigate('/upay');
-  };
-
-
-  useEffect(() => {
-    AOS.init();
-  }, [])
+  const navigateHomeInternet = () => navigate('/home-internet');
+  const navigateCorporateInternet = () => navigate('/corporate-internet');
+  const navigateBandwidthReseller = () => navigate('/bandwidth-reseller');
+  const navigateBkash = () => navigate('/bkash');
+  const navigateRocket = () => navigate('/rocket');
+  const navigateNagad = () => navigate('/nagad');
+  const navigateUpay = () => navigate('/upay');
 
   const [activeTab, setActiveTab] = useState('corporate');
+
+  useEffect(() => {
+    // Initialize AOS
+    AOS.init();
+
+    // Script loading for voiceflow
+    const script = document.createElement('script');
+    script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+    script.type = "text/javascript";
+    script.onload = () => {
+      window.voiceflow.chat.load({
+        verify: { projectID: '656ba5395061e600072a1c15' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production'
+      });
+    };
+
+    // Append the script to the document head
+    document.head.appendChild(script);
+
+    // Clean up function to remove the script when the component unmounts
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const TabButtons = () => (
     <div className="tabs-header py-4">
       <ul className="flex flex-col md:flex-row gap-4">
+        {/* Buttons for each tab */}
         <button
-          // className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'corporate' ? 'bg-red text-white' : 'text-black bg-white'}`}
           className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'corporate' ? 'bg-red text-white hover:text-gray-300' : 'text-black bg-white hover:text-red'}`}
-
           onClick={() => setActiveTab('corporate')}
         >
           Corporate Internet
         </button>
         <button
           className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'home' ? 'bg-red text-white hover:text-gray-300' : 'text-black bg-white hover:text-red'}`}
-
           onClick={() => setActiveTab('home')}
         >
           Home Internet
         </button>
         <button
           className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'reseller' ? 'bg-red text-white hover:text-gray-300' : 'text-black bg-white hover:text-red'}`}
-
           onClick={() => setActiveTab('reseller')}
         >
           Bandwidth Reseller
@@ -79,6 +81,7 @@ export default function Home() {
       </ul>
     </div>
   );
+
 
 
   // Data for Corporate category
