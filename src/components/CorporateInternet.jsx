@@ -18,9 +18,9 @@ import { FaMobileAlt } from "react-icons/fa";
 
 const Feature = ({ Icon, title, description }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
-      <div className="p-3 md:p-6 bg-white rounded-full shadow-lg w-16 h-16 md:w-24 md:h-24 mx-auto md:mx-0">
-        <Icon className="w-full h-full text-gray-800" />
+    <div className="flex flex-col items-center text-center gap-4 md:flex-row md:items-start md:text-left">
+      <div className='box-border w-20 h-20 p-4 md:w-48 md:h-48'>
+        <Icon className="w-full h-auto text-green" />
       </div>
       <div>
         <h2 className="text-lg font-bold">{title}</h2>
@@ -75,10 +75,10 @@ export default function CorporateInternet() {
         </div>
 
         <div className='flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 p-4'>
-          <div className='w-full md:w-1/2 lg:w-1/3 flex justify-center'>
+          <div className='w-full md:w-1/2 lg:w-1/2 flex justify-center'>
             <img className='w-3/4 md:w-full h-auto' src="/images/card_two.png" alt="Corporate Internet Image" />
           </div>
-          <div className='w-full md:w-1/2 lg:w-2/3 flex flex-col gap-4 items-center'>
+          <div className='w-full md:w-1/2 lg:w-1/3 flex flex-col gap-4 items-center lg:pl-16'>
             <Feature
               Icon={FaRocket}
               title="Ultra-Fast Internet"
