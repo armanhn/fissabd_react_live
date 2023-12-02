@@ -11,7 +11,8 @@ const Header = () => {
                 </div>
                 <div className="flex items-center space-x-4">
                     <FaEnvelope className="text-red" />
-                    <span className="text-sm text-red-700">info@fisasbd.com</span>
+                    {/* <span className="text-sm text-red-700">info@fisasbd.com</span> */}
+                    <a href="mailto:info@fisasbd.com">info@fisasbd.com</a>
                     <FaPhoneAlt className="text-red" />
                     <span className="text-sm text-red-700">+88 0173 248 0007</span>
                 </div>
