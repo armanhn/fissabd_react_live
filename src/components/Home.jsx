@@ -359,7 +359,7 @@ export default function Home() {
           </div>
 
           <div className='block sm:hidden py-12'>
-            <Swiper
+            {/* <Swiper
               slidesPerView={1}
               spaceBetween={10}
               navigation={true}
@@ -368,28 +368,50 @@ export default function Home() {
             >
               <SwiperSlide>
                 <div className='w-70 h-70 p-7 bg-white border-2 rounded-xl border-grey hover:border-red mx-auto hover:cursor-pointer' onClick={navigateBkash}>
-                  <img src="/images/bkash2.png" alt="FISSA BD" />
+                  <img className="w-3/4 mx-auto" src="/images/bkash2.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
                 <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={navigateRocket}>
-                  <img src="/images/rocketpay.png" alt="FISSA BD" />
+                  <img className="w-3/4 mx-auto" src="/images/rocketpay.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
                 <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={navigateBkash}>
-                  <img src="/images/nagad.png" alt="FISSA BD" />
+                  <img className="w-3/4 mx-auto" src="/images/nagad.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
                 <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={navigateUpay}>
-                  <img className="mx-auto" src="/images/upay.png" alt="FISSA BD" />
+                  <img className="w-3/4 mx-auto" src="/images/upay.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
+            </Swiper> */}
+            <Swiper
+              slidesPerView={1}
+              spaceBetween={10}
+              navigation={true}
+              modules={[EffectFade, Navigation, Pagination]}
+              className="mySwiper"
+            >
+              {[
+                { src: "/images/bkash2.png", alt: "bKash", onClick: navigateBkash },
+                { src: "/images/rocketpay.png", alt: "Rocket", onClick: navigateRocket },
+                { src: "/images/nagad.png", alt: "Nagad", onClick: navigateNagad },
+                { src: "/images/upay.png", alt: "Upay", onClick: navigateUpay },
+              ].map((paymentOption, index) => (
+                <SwiperSlide key={index}>
+                  <div className='w-90 h-90 p-7 flex justify-center items-center bg-white border-2 border-grey rounded-xl hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={paymentOption.onClick}>
+                    <img className="max-w-full max-h-full object-contain" src={paymentOption.src} alt={paymentOption.alt} />
+                  </div>
+                </SwiperSlide>
+              ))}
             </Swiper>
+
+
           </div>
         </div>
       </div>

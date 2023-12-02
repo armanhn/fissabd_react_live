@@ -8,6 +8,10 @@ export default {
     extend: {
       height: {
         '560': '35rem',
+        '90': '22rem',
+      },
+      width: {
+        '90': '22rem',
       }
     },
     container: {
