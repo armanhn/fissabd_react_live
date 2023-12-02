@@ -20,7 +20,7 @@ const Feature = ({ Icon, title, description }) => {
   return (
     <div className="flex flex-col items-center text-center gap-4 md:flex-row md:items-start md:text-left">
       <div className='box-border w-20 h-20 p-4 md:w-48 md:h-48'>
-        <Icon className="w-full h-auto text-green" />
+        <Icon className="w-full h-auto text-red" />
       </div>
       <div>
         <h2 className="text-lg font-bold">{title}</h2>
