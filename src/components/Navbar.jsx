@@ -23,7 +23,7 @@ function Navbar() {
       <div className='flex items-center justify-between mx-auto max-w-6xl px-4 md:px-8'>
         {/* Logo */}
         <div>
-          <Link className='hover:text-red' to="/"><img className="h-16" src="/images/fissa_logo.png" alt="FISSA BD" /></Link>
+          <a className='hover:text-red' href="/"><img className="h-16" src="/images/fissa_logo.png" alt="FISSA BD" /></a>
 
         </div>
 

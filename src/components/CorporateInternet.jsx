@@ -12,7 +12,7 @@ import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
 import AOS from 'aos';
 import { useNavigate } from 'react-router-dom';
 import { FaMobileAlt } from "react-icons/fa";
-
+import { useScrollToTop } from './hooks/scroll';
 
 
 
@@ -36,6 +36,7 @@ const Feature = ({ Icon, title, description }) => {
 
 
 export default function CorporateInternet() {
+  useScrollToTop();
   const navigate = useNavigate();
 
   const navigateHomeInternet = () => {

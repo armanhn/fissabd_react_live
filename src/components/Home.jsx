@@ -16,10 +16,10 @@ import Navbar from './Navbar';
 import Footer from './Footer'
 import Header from './Header';
 import PricingPlan from './PricingPlan';
-
+import { useScrollToTop } from './hooks/scroll';
 export default function Home() {
 
-
+  useScrollToTop();
   const navigate = useNavigate();
 
   const navigateHomeInternet = () => {
@@ -55,19 +55,23 @@ export default function Home() {
     <div className="tabs-header py-4">
       <ul className="flex flex-col md:flex-row gap-4">
         <button
-          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'corporate' ? 'bg-red text-white' : 'text-black bg-white'}`}
+          // className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'corporate' ? 'bg-red text-white' : 'text-black bg-white'}`}
+          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'corporate' ? 'bg-red text-white hover:text-gray-300' : 'text-black bg-white hover:text-red'}`}
+
           onClick={() => setActiveTab('corporate')}
         >
           Corporate Internet
         </button>
         <button
-          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'home' ? 'bg-red text-white' : 'text-black bg-white'}`}
+          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'home' ? 'bg-red text-white hover:text-gray-300' : 'text-black bg-white hover:text-red'}`}
+
           onClick={() => setActiveTab('home')}
         >
           Home Internet
         </button>
         <button
-          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'reseller' ? 'bg-red text-white' : 'text-black bg-white'}`}
+          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'reseller' ? 'bg-red text-white hover:text-gray-300' : 'text-black bg-white hover:text-red'}`}
+
           onClick={() => setActiveTab('reseller')}
         >
           Bandwidth Reseller
@@ -128,17 +132,7 @@ export default function Home() {
 
   // Data for Home category
   const homeData = [
-    {
-      title: "Home Silver",
-      price: "৳3,000",
-      speed: "15 Mbps",
-      fbSpeed: "30 Mbps",
-      ytSpeed: "30 Mbps",
-      bdixSpeed: "Unlimited BDIX Speed",
-      extras: "Unlimited Downloads",
-      support: "Regular Support",
-      aosType: "fade-left"
-    },
+
     {
       title: "Home Gold",
       price: "৳5,000",
@@ -148,7 +142,18 @@ export default function Home() {
       bdixSpeed: "Unlimited BDIX Speed",
       extras: "IPTV, Unlimited Torrent",
       support: "24/7 Support",
-      aosType: "fade-up-right"
+      aosType: "fade-down"
+    },
+    {
+      title: "Home Silver",
+      price: "৳3,000",
+      speed: "15 Mbps",
+      fbSpeed: "30 Mbps",
+      ytSpeed: "30 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Unlimited Downloads",
+      support: "Regular Support",
+      aosType: "fade-up"
     },
     {
       title: "Home Bronze",
@@ -159,23 +164,13 @@ export default function Home() {
       bdixSpeed: "Unlimited BDIX Speed",
       extras: "Basic Usage, Limited Downloads",
       support: "Business Hours Support",
-      aosType: "fade-up-left"
+      aosType: "fade-right"
     }
   ];
 
   // Data for Reseller category
   const resellerData = [
-    {
-      title: "Reseller Silver",
-      price: "৳20,000",
-      speed: "100 Mbps",
-      fbSpeed: "200 Mbps",
-      ytSpeed: "200 Mbps",
-      bdixSpeed: "Unlimited BDIX Speed",
-      extras: "Bulk Bandwidth, Resale Options",
-      support: "Priority Support",
-      aosType: "fade-down-right"
-    },
+
     {
       title: "Reseller Gold",
       price: "৳30,000",
@@ -185,7 +180,18 @@ export default function Home() {
       bdixSpeed: "Unlimited BDIX Speed",
       extras: "Custom Packages, White Labeling",
       support: "24/7 Dedicated Support",
-      aosType: "fade-down-left"
+      aosType: "fade-down"
+    },
+    {
+      title: "Reseller Silver",
+      price: "৳20,000",
+      speed: "100 Mbps",
+      fbSpeed: "200 Mbps",
+      ytSpeed: "200 Mbps",
+      bdixSpeed: "Unlimited BDIX Speed",
+      extras: "Bulk Bandwidth, Resale Options",
+      support: "Priority Support",
+      aosType: "fade-up"
     },
     {
       title: "Reseller Bronze",
@@ -196,7 +202,7 @@ export default function Home() {
       bdixSpeed: "Unlimited BDIX Speed",
       extras: "Standard Reseller Options",
       support: "Regular Support",
-      aosType: "fade-zoom-in"
+      aosType: "fade-right"
     }
   ];
 
@@ -246,7 +252,7 @@ export default function Home() {
           navigation={true}
           loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -257,14 +263,14 @@ export default function Home() {
         >
           <SwiperSlide>
             <img className='hidden md:block w-full h-560' src="/images/img1.png" />
-            <img className='block md:hidden w-full h-560' src="/images/img-mobile-1.png" />
+            <img className='block md:hidden w-full h-560' src="/images/img-mobile-2.png" />
           </SwiperSlide>
           <SwiperSlide>
             <img className='hidden md:block w-full h-560' src="/images/img2.png" />
             <img className='block md:hidden w-full h-560' src="/images/img-mobile-1.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className='hidden md:block w-full h-560' src="/images/img3.png" />
+            <img className='hidden md:block w-full h-560' src="/images/img3-bengali.png" />
             <img className='block md:hidden w-full h-560' src="/images/img-mobile-1.png" />
           </SwiperSlide>
         </Swiper>
@@ -275,10 +281,10 @@ export default function Home() {
           <div className='flex justify-center items-center xl:text-left text-center max-w-6xl mx-auto xl:px-0 px-8'>
             <div className='w-3/4 pb-40 -mt-12'>
               <span className='text-sm'>Starting at ৳800/month</span>
-              <h1 className='sm:text-4xl text-2xl font-bold mt-8'>Lightning-Fast Connectivity & The Future of Reliable 24/7 Internet Performance</h1>
+              <h1 className='sm:text-4xl text-2xl font-bold mt-8 text-red'>Lightning-Fast Connectivity & The Future of Reliable 24/7 Internet Performance</h1>
               <p className='text-sm'>Recognized as Dhaka city's most dependable local internet service provider, FISSA has been bridging digital divides since July 2001. Our mission? Delivering high-speed broadband at affordable rates, right to the doorsteps of our cherished local community.</p>
               <div className='mt-8'>
-                <button className='bg-red text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>SEE OUR PLANS</button>
+                <button className='bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>SEE OUR PLANS</button>
               </div>
             </div>
             <div className='md:flex hidden items-center justify-center w-1/4 h-2/5 py-8'>

@@ -2,8 +2,9 @@ import React from 'react'
 
 import Footer from './Footer'
 import Navbar from './Navbar'
-
+import { useScrollToTop } from './hooks/scroll';
 export default function Aboutus() {
+  useScrollToTop();
   return (
     <div>
 
