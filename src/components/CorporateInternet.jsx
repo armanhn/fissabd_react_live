@@ -76,7 +76,7 @@ export default function CorporateInternet() {
 
         <div className='flex flex-col md:flex-row items-center gap-4 md:gap-6 lg:gap-8 p-4'>
           <div className='w-full md:w-1/2 lg:w-1/2 flex justify-center'>
-            <img className='w-3/4 md:w-full h-auto' src="/images/card_two.png" alt="Corporate Internet Image" />
+            <img className='w-full h-auto md:w-full h-auto' src="/images/img4.png" alt="Corporate Internet Image" />
           </div>
           <div className='w-full md:w-1/2 lg:w-1/3 flex flex-col gap-4 items-center lg:pl-16'>
             <Feature

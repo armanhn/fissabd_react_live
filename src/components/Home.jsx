@@ -55,19 +55,19 @@ export default function Home() {
     <div className="tabs-header py-4">
       <ul className="flex flex-col md:flex-row gap-4">
         <button
-          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'corporate' ? 'bg-green text-white' : 'text-black bg-white'}`}
+          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'corporate' ? 'bg-red text-white' : 'text-black bg-white'}`}
           onClick={() => setActiveTab('corporate')}
         >
           Corporate Internet
         </button>
         <button
-          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'home' ? 'bg-green text-white' : 'text-black bg-white'}`}
+          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'home' ? 'bg-red text-white' : 'text-black bg-white'}`}
           onClick={() => setActiveTab('home')}
         >
           Home Internet
         </button>
         <button
-          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'reseller' ? 'bg-green text-white' : 'text-black bg-white'}`}
+          className={`tab-button ml-2 px-4 py-2 border border-transparent text-sm font-medium rounded-md hover:text-red focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${activeTab === 'reseller' ? 'bg-red text-white' : 'text-black bg-white'}`}
           onClick={() => setActiveTab('reseller')}
         >
           Bandwidth Reseller
@@ -256,13 +256,16 @@ export default function Home() {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img className='w-full h-560' src="/images/banner1.jpg" />
+            <img className='hidden md:block w-full h-560' src="/images/img1.png" />
+            <img className='block md:hidden w-full h-560' src="/images/img-mobile-1.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className='w-full h-560' src="/images/banner2.jpg" />
+            <img className='hidden md:block w-full h-560' src="/images/img2.png" />
+            <img className='block md:hidden w-full h-560' src="/images/img-mobile-1.png" />
           </SwiperSlide>
           <SwiperSlide>
-            <img className='w-full h-560' src="/images/banner3.jpg" />
+            <img className='hidden md:block w-full h-560' src="/images/img3.png" />
+            <img className='block md:hidden w-full h-560' src="/images/img-mobile-1.png" />
           </SwiperSlide>
         </Swiper>
       </div>
@@ -275,7 +278,7 @@ export default function Home() {
               <h1 className='sm:text-4xl text-2xl font-bold mt-8'>Lightning-Fast Connectivity & The Future of Reliable 24/7 Internet Performance</h1>
               <p className='text-sm'>Recognized as Dhaka city's most dependable local internet service provider, FISSA has been bridging digital divides since July 2001. Our mission? Delivering high-speed broadband at affordable rates, right to the doorsteps of our cherished local community.</p>
               <div className='mt-8'>
-                <button className='bg-green text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>SEE OUR PLANS</button>
+                <button className='bg-red text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>SEE OUR PLANS</button>
               </div>
             </div>
             <div className='md:flex hidden items-center justify-center w-1/4 h-2/5 py-8'>
@@ -289,25 +292,25 @@ export default function Home() {
         <div id="section-1" className='max-w-6xl mx-auto text-center py-20 xl:px-0 px-8'>
           <div data-aos="zoom-in" className='flex items-center flex-col gap-3 pt-4'>
             <h1 className='text-4xl font-bold leading-tight'> Our Services</h1>
-            <div className="w-36 h-1.5 rounded-lg bg-green"></div>
+            <div className="w-36 h-1.5 rounded-lg bg-red"></div>
           </div>
 
           <p data-aos="zoom-in" className='pt-12'>Whether you're a bustling corporation or a modern household, FISSA has the perfect package designed just for you. Dive into our diverse range of services, from corporate to home internet solutions. And the cherry on top? Every connection comes with a complimentary optical fibre upgrade, ensuring you experience the pinnacle of speed and reliability.</p>
           <div className='flex flex-wrap justify-center pt-12 gap-10'>
 
-            <div data-aos="zoom-in" data-aos-duration="1500" className='w-80  h-80 p-7 bg-white border-2 rounded-xl border-grey hover:border-green shadow-lg hover:cursor-pointer' onClick={navigateCorporateInternet}>
+            <div data-aos="zoom-in" data-aos-duration="1500" className='w-80  h-80 p-7 bg-white border-2 rounded-xl border-grey hover:border-red shadow-lg hover:cursor-pointer' onClick={navigateCorporateInternet}>
               <FaBuilding className='text-6xl mx-auto' />
               <h3 className='text-xl font-bold pt-7 '>Corporate Internet</h3>
               <p className='pt-5 text-sm'>In addition to broadband internet services, we help our clients build, connect, operate and maintain their own SOHO or office network.</p>
             </div>
 
-            <div data-aos="zoom-in" data-aos-duration="1500" className='w-80 h-80 p-7 bg-white border-2 border-grey hover:border-green rounded-xl shadow-lg hover:cursor-pointer' onClick={navigateHomeInternet}>
+            <div data-aos="zoom-in" data-aos-duration="1500" className='w-80 h-80 p-7 bg-white border-2 border-grey hover:border-red rounded-xl shadow-lg hover:cursor-pointer' onClick={navigateHomeInternet}>
               <IoHome className='text-6xl mx-auto' />
               <h3 className='text-xl font-bold pt-7'>Home Internet</h3>
               <p className='pt-4 text-sm'>Experience seamless browsing and streaming with our tailored home packages. Fast, reliable, and supported by a dedicated customer care team.</p>
             </div>
 
-            <div data-aos="zoom-in" data-aos-duration="1500" className='w-80 h-80 p-7 bg-white border-2 border-grey hover:border-green rounded-xl shadow-lg hover:cursor-pointer' onClick={navigateBandwidthReseller}>
+            <div data-aos="zoom-in" data-aos-duration="1500" className='w-80 h-80 p-7 bg-white border-2 border-grey hover:border-red rounded-xl shadow-lg hover:cursor-pointer' onClick={navigateBandwidthReseller}>
               <IoWifi className='text-6xl mx-auto' />
               <h3 className='text-xl font-bold pt-7'>Bandwidth Reseller</h3>
               <p className='pt-4 text-sm'>Expand your reach with our bandwidth reselling solutions. Reliable and high-speed options for ISPs, enhancing customer connectivity.</p>
@@ -319,7 +322,7 @@ export default function Home() {
       <div className='max-w-6xl mx-auto px-4 text-center py-20 md:px-8' id="section-4">
         <div data-aos="fade-up" className='flex items-center flex-col gap-3 pt-4'>
           <h1 className='text-4xl font-bold leading-tight'> Our Packages</h1>
-          <div className="w-36 h-1.5 rounded-lg bg-green"></div>
+          <div className="w-36 h-1.5 rounded-lg bg-red"></div>
         </div>
         <p data-aos="zoom-in" className='pt-12'>Dive into a world of tailored internet solutions with FISSA. Our diverse range of packages is designed to cater to every need, from the casual browser to the data-intensive user. Whether you're a home user or a large enterprise, we've got a plan that's just right for you. Experience seamless connectivity, top-notch customer support, and the promise of a better digital tomorrow with our curated internet packages</p>
 
@@ -352,7 +355,7 @@ export default function Home() {
         <div className='max-w-6xl mx-auto text-center pt-20 pb-12 xl:px-0 px-8'>
           <div className='flex items-center flex-col gap-3' data-aos="zoom-in">
             <h1 className='text-4xl font-bold leading-tight text-white'> Pay your bills through Mobile banking</h1>
-            <div className="w-40 h-1.5 rounded-lg bg-green"></div>
+            <div className="w-40 h-1.5 rounded-lg bg-red"></div>
           </div>
 
           <div className='block sm:hidden py-12'>
@@ -364,25 +367,25 @@ export default function Home() {
               className="mySwiper"
             >
               <SwiperSlide>
-                <div className='w-70 h-70 p-7 bg-white border-2 rounded-xl border-grey hover:border-green mx-auto hover:cursor-pointer' onClick={navigateBkash}>
+                <div className='w-70 h-70 p-7 bg-white border-2 rounded-xl border-grey hover:border-red mx-auto hover:cursor-pointer' onClick={navigateBkash}>
                   <img src="/images/bkash2.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
-                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateRocket}>
+                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={navigateRocket}>
                   <img src="/images/rocketpay.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
-                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateBkash}>
+                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={navigateBkash}>
                   <img src="/images/nagad.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
 
               <SwiperSlide>
-                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-green rounded-xl mx-auto hover:cursor-pointer' onClick={navigateUpay}>
+                <div className='w-70 h-70 p-7 bg-white border-2 border-grey hover:border-red rounded-xl mx-auto hover:cursor-pointer' onClick={navigateUpay}>
                   <img className="mx-auto" src="/images/upay.png" alt="FISSA BD" />
                 </div>
               </SwiperSlide>
@@ -396,7 +399,7 @@ export default function Home() {
       <div className='bg-text-color sm:block hidden pb-20'>
         <div className='py-12 grid grid-cols-5 grid-rows-2 max-w-5xl mx-auto xl:px-0 px-8' id='payment'>
           <div data-aos="zoom-in-right" data-aos-duration="1500" className='flex justify-center items-center'>
-            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateBkash}>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-red hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateBkash}>
               <img src="/images/bkash2.png" alt="FISSA BD" />
             </div>
           </div>
@@ -411,13 +414,13 @@ export default function Home() {
           </div>
           <div></div>
           <div data-aos="zoom-in-left" data-aos-duration="1500" className='flex justify-center items-center'>
-            <div className='rounded-full w-36 h-36 overflow-hidden hover:border-green hover:border-4 hover:cursor-pointer bg-white flex items-center' onClick={navigateRocket}>
+            <div className='rounded-full w-36 h-36 overflow-hidden hover:border-red hover:border-4 hover:cursor-pointer bg-white flex items-center' onClick={navigateRocket}>
               <img src="/images/rocketpay.png" alt="FISSA BD" />
             </div>
           </div>
           <div></div>
           <div data-aos="fade-up" data-aos-duration="1500" className='flex justify-center items-center'>
-            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateNagad}>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-red hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateNagad}>
               <img src="/images/nagad.png" alt="FISSA BD" />
             </div>
           </div>
@@ -427,7 +430,7 @@ export default function Home() {
             </div>
           </div>
           <div data-aos="fade-up" data-aos-duration="1500" className='flex justify-center items-center'>
-            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-green hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateUpay}>
+            <div className='rounded-full w-36 h-36 overflow-hidden bg-white hover:border-red hover:border-4 hover:cursor-pointer flex items-center' onClick={navigateUpay}>
               <img src="/images/upay.png" alt="FISSA BD" />
             </div>
           </div>
