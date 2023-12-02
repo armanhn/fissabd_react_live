@@ -287,7 +287,7 @@ export default function Home() {
               <h1 className='sm:text-4xl text-2xl font-bold mt-8 text-red'>Lightning-Fast Connectivity & The Future of Reliable 24/7 Internet Performance</h1>
               <p className='text-sm'>Recognized as Dhaka city's most dependable local internet service provider, FISSA has been bridging digital divides since July 2001. Our mission? Delivering high-speed broadband at affordable rates, right to the doorsteps of our cherished local community.</p>
               <div className='mt-8'>
-                <button className='bg-text-color text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>SEE OUR PLANS</button>
+                <button className='bg-red text-white font-bold px-8 py-4 rounded-md hover:opacity-80'>SEE OUR PLANS</button>
               </div>
             </div>
             <div className='md:flex hidden items-center justify-center w-1/4 h-2/5 py-8'>
