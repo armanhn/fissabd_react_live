@@ -34,26 +34,6 @@ export default function Home() {
   useEffect(() => {
     // Initialize AOS
     AOS.init();
-
-    // Script loading for voiceflow
-    const script = document.createElement('script');
-    script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
-    script.type = "text/javascript";
-    script.onload = () => {
-      window.voiceflow.chat.load({
-        verify: { projectID: '656ba5395061e600072a1c15' },
-        url: 'https://general-runtime.voiceflow.com',
-        versionID: 'production'
-      });
-    };
-
-    // Append the script to the document head
-    document.head.appendChild(script);
-
-    // Clean up function to remove the script when the component unmounts
-    return () => {
-      document.head.removeChild(script);
-    };
   }, []);
 
   const TabButtons = () => (
